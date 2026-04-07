@@ -1,0 +1,179 @@
+<!-- <h2>Edit Student</h2>
+<form method="post">
+    {%csrf_token%}
+    Name:<input type="text" name="name" value="{{Student.name}}" 
+    <br><br>
+    Roll:<input type="number" name="roll" value="{{Student.roll_no}}" <br><br>
+    Name:<input type="text" name="dept" value="{{Student.department}}"  <br><br>
+    Name:<input type="number" name="year" value="{{Student.year}}" <br><br>
+    <button type="submit">Update</button>
+
+</form> -->
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Student</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+    /* Form Container */
+
+.form-container{
+
+width:350px;
+margin:80px auto;
+padding:35px;
+
+background: rgba(255,255,255,0.15);
+
+backdrop-filter: blur(10px);
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,0.4);
+
+box-shadow:0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* Heading */
+
+h2{
+text-align:center;
+margin-bottom:25px;
+font-family:Arial;
+}
+
+/* Form Group */
+
+.form-group{
+margin-bottom:18px;
+}
+
+/* Labels */
+
+label{
+display:block;
+font-weight:700;
+margin-bottom:6px;
+font-size:20px;
+}
+
+/* Input Fields */
+
+input{
+
+width:90%;
+padding:10px;
+
+border-radius:6px;
+border:1px solid #ccc;
+
+font-size:14px;
+
+outline:none;
+
+transition:0.3s;
+}
+
+/* Input focus effect */
+
+input:focus{
+
+border-color:#4facfe;
+
+box-shadow:0 0 5px rgba(79,172,254,0.5);
+}
+
+/* Button */
+
+.btn{
+
+width:70%;
+padding:12px;
+
+background:rgb(16, 149, 16);
+
+border:none;
+
+border-radius:8px;
+
+color:rgb(255, 255, 255);
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+/* Button hover */
+
+.btn:hover{
+
+transform:scale(1.03);
+
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+/* temporay */
+body{
+margin:0;
+padding:0;
+
+height:100vh;
+
+overflow:hidden;   /* This stops scrolling */
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h2>Edit Student</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" value="{{ student.name }}">
+</div>
+
+<div class="form-group">
+<label for="roll">Roll No</label>
+<input type="number" id="roll" name="roll" value="{{ student.roll_no }}">
+</div>
+
+<div class="form-group">
+<label for="dept">Department</label>
+<input type="text" id="dept" name="dept" value="{{ student.department }}">
+</div>
+
+<div class="form-group">
+<label for="year">Year</label>
+<input type="number" id="year" name="year" value="{{ student.year }}">
+</div>
+
+<button type="submit" class="btn">Update Student</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

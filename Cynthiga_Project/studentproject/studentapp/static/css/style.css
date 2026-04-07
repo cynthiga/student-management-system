@@ -1,0 +1,260 @@
+/* Page background */
+body{
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    /* for adding color (bg_image) */
+    background-color: lightblue;
+    /* background: linear-gradient(to right, #4facfe, #00f2fe); */
+    text-align: center;
+    /* padding-top: 100px; */
+    
+}
+.name-btn {
+    display: inline-block;
+    width: 120px;              /* FIXED WIDTH */
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    background: white;
+    color: #0d6efd;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.name-btn:hover {
+    background: #0d6efd;
+    color: white;
+    transform: scale(1.05);   /* small smooth zoom */
+}
+
+
+
+
+/* Title */
+h2{
+    color: rgb(27, 2, 95);
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Links as buttons */
+a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: #333;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Hover effect */
+a:hover{
+    background-color: #333;
+    color: white;
+    transform: scale(1.05);
+}
+/* ===== GLOBAL ===== */
+body {
+margin: 0;
+font-family: "Segoe UI", Arial, sans-serif;
+/* background: #f4f6fb; */
+color: #1f2937;
+
+}
+/* ===== PAGE CENTER ===== */
+.page {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+padding-top: 60px;
+}
+/* ===== CARD ===== */
+.card {
+width: 95%;
+max-width: 900px;
+background: rgba(255,255,255,0.0);
+backdrop-filter: blur(40px);
+/* background: #ffffff; */
+padding: 35px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+/* ===== TITLE ===== */
+h2 {
+text-align: center;
+margin-bottom: 30px;
+}
+/* ===== TABLE ===== */
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+thead {
+background: #eef2ff;
+}
+th {
+padding: 14px;
+text-align: center;
+font-weight: 800;
+}
+td {
+padding: 14px;
+text-align: center;
+border-bottom: 1px solid #e5e7eb;
+font-weight: 700;
+}
+tbody tr:hover {
+background: #f9fafb;
+}
+
+ .message-container{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.popup-message{
+    background: #28a745;
+    color: white;
+    padding: 12px 25px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn{
+    from{
+        transform: translateX(200px);
+        opacity:0;
+    }
+    to{
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+
+
+
+
+/* ===== ACTION BUTTONS ===== */
+.action a {
+padding: 6px 14px;
+border-radius: 6px;
+color: white;
+font-size: 13px;
+text-decoration: none;
+margin: 0 4px;
+}
+.edit {
+background: #f59e0b;
+}
+.delete {
+background: #ef4444;
+}
+/* ===== NAV BUTTONS ===== */
+
+
+.undo-btn {
+    background: linear-gradient(45deg, #4f46e5, #9333ea);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.undo-btn:hover {
+    background: linear-gradient(45deg, #4338ca, #7e22ce);
+    transform: scale(1.05);
+}
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('/static/images/bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: white;
+    z-index: 2;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* BUTTON STYLE */
+.btn {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+.navbar {
+    position: relative;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #1f2937;
+    background-color: #1f2937;
+}
+
+.nav-link {
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+.student-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.student-link:hover {
+    text-decoration: underline;
+}

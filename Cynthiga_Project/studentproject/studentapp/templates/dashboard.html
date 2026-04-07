@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+    <style>
+        body {
+            background: #1f2937;
+            color: white;
+            font-family: Arial;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+
+<h1>📊 Dashboard</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Total Students</h2>
+        <h1>{{ total_students }}</h1>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-container">
+        <canvas id="deptChart"></canvas>
+    </div>
+
+</div>
+
+<!-- ✅ Script goes here -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // your chart code
+document.addEventListener("DOMContentLoaded", function () {
+
+    const labels = JSON.parse('{{ dept_labels|escapejs }}');
+    const data = JSON.parse('{{ dept_counts|escapejs }}');
+
+    const ctx = document.getElementById('deptChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Students',
+                data: data,
+                backgroundColor: '#6366f1',   // 🔥 nice color
+                borderRadius: 8
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+});
+</script>
+
+
+</body>
+
+</html>
